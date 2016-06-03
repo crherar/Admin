@@ -121,4 +121,16 @@
 
 #define NR_VFS_CALLS		49	/* highest number from base plus one */
 
+
+/*===========================================================================*
+ *				Calls to MANAGER				     *
+ *===========================================================================*/
+
+#define MANAGER_BASE		0x1800
+
+#define IS_MANAGER_CALL(type)	(((type) & ~0xff) == MANAGER_BASE)
+
+#define NR_MANAGER_CALLS		1	/* highest number from base plus one */
+
+
 #endif /* !_MINIX_CALLNR_H */
