@@ -34,7 +34,7 @@ void sched_init(void)
 			assert(_ENDPOINT_P(trmp->mp_endpoint) == INIT_PROC_NR);
 			parent_e = mproc[trmp->mp_parent].mp_endpoint;
 			assert(parent_e == trmp->mp_endpoint);
-			s = sched_start(MANAGER_PROC_NR,	/* scheduler_e */
+			s = sched_start(SCHED_PROC_NR,	/* scheduler_e */
 				trmp->mp_endpoint,	/* schedulee_e */
 				parent_e,		/* parent_e */
 				USER_Q, 		/* maxprio */
@@ -95,7 +95,7 @@ int sched_nice(struct mproc *rmp, int nice)
 	/* If the kernel is the scheduler, we don't allow messing with the
 	 * priority. If you want to control process priority, assign the process
 	 * to a user-space scheduler */
-	 
+
 	if (rmp->mp_scheduler == KERNEL || rmp->mp_scheduler == NONE)
 		return (EINVAL);
 
