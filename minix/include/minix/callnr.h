@@ -132,5 +132,25 @@
 
 #define NR_MANAGER_CALLS		1	/* highest number from base plus one */
 
+ /*===========================================================================*
+ *				Calls to SCHED_RR				     *
+ *===========================================================================*/
+
+#define SCHED_RR_BASE		0x1900
+
+#define IS_SCHED_RR_CALL(type)	(((type) & ~0xff) == SCHED_RR_BASE)
+
+#define NR_SCHED_RR_CALLS		1	/* highest number from base plus one */
+
+ /*===========================================================================*
+ *				Calls to SCHED_FCFS				     *
+ *===========================================================================*/
+
+#define SCHED_FCFS_BASE		0x2000
+
+#define IS_SCHED_FCFS_CALL(type)	(((type) & ~0xff) == SCHED_FCFS_BASE)
+
+#define NR_SCHED_FCFS_CALLS		1	/* highest number from base plus one */
+
 
 #endif /* !_MINIX_CALLNR_H */

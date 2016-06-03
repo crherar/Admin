@@ -64,7 +64,9 @@
 #define VM_PROC_NR   ((endpoint_t) 8)   /* memory server */
 #define PFS_PROC_NR  ((endpoint_t) 9)  /* pipe filesystem */
 #define MANAGER_PROC_NR ((endpoint_t) 10) /* MANAGER */
-#define LAST_SPECIAL_PROC_NR	11	/* An untyped version for
+#define SCHED_RR_PROC_NR ((endpoint_t) 11) /* MANAGER */
+#define SCHED_FCFS_PROC_NR ((endpoint_t) 12) /* MANAGER */
+#define LAST_SPECIAL_PROC_NR	13	/* An untyped version for
                                            computation in macros.*/
 #define INIT_PROC_NR ((endpoint_t) LAST_SPECIAL_PROC_NR)  /* init
                                                         -- goes multiuser */
