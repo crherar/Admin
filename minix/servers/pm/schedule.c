@@ -34,7 +34,7 @@ void sched_init(void)
 			assert(_ENDPOINT_P(trmp->mp_endpoint) == INIT_PROC_NR);
 			parent_e = mproc[trmp->mp_parent].mp_endpoint;
 			assert(parent_e == trmp->mp_endpoint);
-			s = sched_start(SCHED_PROC_NR,	/* scheduler_e */
+			s = sched_start(MANAGER_PROC_NR,	/* scheduler_e */
 				trmp->mp_endpoint,	/* schedulee_e */
 				parent_e,		/* parent_e */
 				USER_Q, 		/* maxprio */
