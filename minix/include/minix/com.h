@@ -63,9 +63,9 @@
 #define MFS_PROC_NR  ((endpoint_t) 7)   /* minix root filesystem */
 #define VM_PROC_NR   ((endpoint_t) 8)   /* memory server */
 #define PFS_PROC_NR  ((endpoint_t) 9)  /* pipe filesystem */
-#define MANAGER_PROC_NR ((endpoint_t) 10) /* MANAGER */
-#define SCHED_RR_PROC_NR ((endpoint_t) 11) /* MANAGER */
-#define SCHED_FCFS_PROC_NR ((endpoint_t) 12) /* MANAGER */
+#define MANAGER_PROC_NR ((endpoint_t) 10) /* MANAGER (Schueduler Manager) */
+#define SCHED_RR_PROC_NR ((endpoint_t) 11) /* SCHED_RR (Round Robin Scheduler) */
+#define SCHED_FCFS_PROC_NR ((endpoint_t) 12) /* SCHED_FCFS (First Come First Served Scheduler) */
 #define LAST_SPECIAL_PROC_NR	13	/* An untyped version for
                                            computation in macros.*/
 #define INIT_PROC_NR ((endpoint_t) LAST_SPECIAL_PROC_NR)  /* init

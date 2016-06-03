@@ -95,6 +95,7 @@ int sched_nice(struct mproc *rmp, int nice)
 	/* If the kernel is the scheduler, we don't allow messing with the
 	 * priority. If you want to control process priority, assign the process
 	 * to a user-space scheduler */
+	 
 	if (rmp->mp_scheduler == KERNEL || rmp->mp_scheduler == NONE)
 		return (EINVAL);
 
