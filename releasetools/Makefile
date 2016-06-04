@@ -18,15 +18,15 @@ PROGRAMS+= ${PROGROOT}/minix/servers/rs/rs
 PROGRAMS+= ${PROGROOT}/minix/servers/pm/pm
 PROGRAMS+= ${PROGROOT}/minix/servers/sched/sched
 PROGRAMS+= ${PROGROOT}/minix/servers/vfs/vfs
-PROGRAMS+= ${PROGROOT}/minix/servers/manager/manager
-PROGRAMS+= ${PROGROOT}/minix/servers/sched_rr/sched_rr
-PROGRAMS+= ${PROGROOT}/minix/servers/sched_fcfs/sched_fcfs
 PROGRAMS+= ${PROGROOT}/minix/drivers/storage/memory/memory
 PROGRAMS+= ${PROGROOT}/minix/drivers/tty/tty/tty
 PROGRAMS+= ${PROGROOT}/minix/fs/mfs/mfs
 PROGRAMS+= ${PROGROOT}/minix/servers/vm/vm
 PROGRAMS+= ${PROGROOT}/minix/fs/pfs/pfs
 PROGRAMS+= ${PROGROOT}/sbin/init/init
+PROGRAMS+= ${PROGROOT}/minix/servers/manager/manager
+PROGRAMS+= ${PROGROOT}/minix/servers/sched_rr/sched_rr
+PROGRAMS+= ${PROGROOT}/minix/servers/sched_fcfs/sched_fcfs
 
 all usage help:
 	@echo " " >&2
