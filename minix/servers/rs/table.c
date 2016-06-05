@@ -25,6 +25,9 @@ struct boot_image_priv boot_image_priv_table[] = {
 {MFS_PROC_NR,"fs_imgrd", SRV_F  },
 {PFS_PROC_NR,  "pfs",    SRV_F  },
 {INIT_PROC_NR, "init",   USR_F  },
+{MANAGER_PROC_NR, "manager", SRV_F},
+{SCHED_RR_PROC_NR, "sched_rr", SRV_F},
+{SCHED_FCFS_PROC_NR, "sched_fcfs", SRV_F},
 {NULL_BOOT_NR, "",       0,     } /* null entry */
 };
 
