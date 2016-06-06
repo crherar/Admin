@@ -1621,13 +1621,11 @@ void enqueue(
   if (!rdy_head[q]) {		/* add to empty queue */
       rdy_head[q] = rdy_tail[q] = rp; 		/* create a new queue */
       rp->p_nextready = NULL;		/* mark new end */
-  printf("Se creo una nueva cola %d y se agrego el proceso %d\n", q, rp->p_nr);
   } 	
   else {					/* add to tail of queue */
       rdy_tail[q]->p_nextready = rp;		/* chain tail of queue */	
       rdy_tail[q] = rp;				/* set new queue tail */
       rp->p_nextready = NULL;		/* mark new end */
-  	printf("Se agrego el proceso %d\n", rp->p_nr);
   }
 
   if (cpuid == rp->p_cpu) {

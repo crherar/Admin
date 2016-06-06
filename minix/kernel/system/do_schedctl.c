@@ -29,7 +29,7 @@ int do_schedctl(struct proc * caller, message * m_ptr)
 		/* the kernel becomes the scheduler and starts 
 		 * scheduling the process.
 		 */
-		priority = m_ptr->m_lsys_krn_schedctl.priority;
+		priority = 0;//m_ptr->m_lsys_krn_schedctl.priority;
 		quantum = m_ptr->m_lsys_krn_schedctl.quantum;
 		cpu = m_ptr->m_lsys_krn_schedctl.cpu;
 
