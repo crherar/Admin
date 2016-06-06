@@ -1607,7 +1607,7 @@ void enqueue(
  * This function can be used x-cpu as it always uses the queues of the cpu the
  * process is assigned to.
  */
-  int q = rp->p_priority;	 		/* scheduling queue to use */
+  int q = 0; //rp->p_priority;	 		/* scheduling queue to use */
   struct proc **rdy_head, **rdy_tail;
   
   assert(proc_is_runnable(rp));
@@ -1621,11 +1621,13 @@ void enqueue(
   if (!rdy_head[q]) {		/* add to empty queue */
       rdy_head[q] = rdy_tail[q] = rp; 		/* create a new queue */
       rp->p_nextready = NULL;		/* mark new end */
-  } 
+  printf("Se creo una nueva cola %d y se agrego el proceso %d\n", q, rp->p_nr);
+  } 	
   else {					/* add to tail of queue */
       rdy_tail[q]->p_nextready = rp;		/* chain tail of queue */	
       rdy_tail[q] = rp;				/* set new queue tail */
       rp->p_nextready = NULL;		/* mark new end */
+  	printf("Se agrego el proceso %d\n", rp->p_nr);
   }
 
   if (cpuid == rp->p_cpu) {
