@@ -155,9 +155,7 @@ int do_start_scheduling(message *m_ptr)
 			&proc_nr_n)) != OK) {
 		return rv;
 	}
-	else {
-		printf("Hola desde SCHED, soy el proceso: %d\n", *rmp->endpoint);
-	}
+	
 	rmp = &schedproc[proc_nr_n];
 
 	/* Populate process slot */
@@ -232,6 +230,7 @@ int do_start_scheduling(message *m_ptr)
 		cpu_proc[rmp->cpu] = CPU_DEAD;
 		pick_cpu(rmp);
 	}
+	printf("Hola desde SCHED, soy el proceso: %d\n", *rmp->endpoint);
 
 	if (rv != OK) {
 		printf("Sched: Error while scheduling process, kernel replied %d\n",
