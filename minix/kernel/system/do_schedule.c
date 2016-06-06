@@ -21,7 +21,7 @@ int do_schedule(struct proc * caller, message * m_ptr)
 		return(EPERM);
 
 	/* Try to schedule the process. */
-	priority = 0;//m_ptr->m_lsys_krn_schedule.priority;
+	priority = m_ptr->m_lsys_krn_schedule.priority;
 	quantum = m_ptr->m_lsys_krn_schedule.quantum;
 	cpu = m_ptr->m_lsys_krn_schedule.cpu;
 
