@@ -221,7 +221,7 @@ int do_start_scheduling(message *m_ptr)
 		return rv;
 	}
 	else {
-		printf("Hola, soy el proceso: %d\n", rmp->endpoint);
+		printf("Hola desde MANAGER, soy el proceso: %d\n", rmp->endpoint);
 	}
 	rmp->flags = IN_USE;
 
