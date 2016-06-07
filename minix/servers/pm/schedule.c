@@ -38,13 +38,14 @@ void sched_init(void)
 				trmp->mp_endpoint,	/* schedulee_e */
 				parent_e,		/* parent_e */
 				USER_Q, 		/* maxprio */
-				USER_QUANTUM, 		/* quantum */
+				USER_QUANTUM, 		/* quantm */
 				-1,			/* don't change cpu */
 				&trmp->mp_scheduler);	/* *newsched_e */
 			if (s != OK) {
 				printf("PM: SCHED denied taking over scheduling of %s: %d\n",
 					trmp->mp_name, s);
 			}
+			printf("Nombre del proceso que se calendariza: %s, se retorna %d\n", trmp->mp_name, s);
 		}
  	}
 }
