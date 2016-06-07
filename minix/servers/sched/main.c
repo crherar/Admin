@@ -54,69 +54,38 @@ int main(void)
 			continue; /* Don't reply. */
 		}
 
-		if(m_in.m_lsys_sched_scheduling_start.parent == TTY_PROC_NR){
-			
-			switch(call_nr) {
-			
-				case SCHEDULING_INHERIT:
-				case SCHEDULING_START:
-				case SCHEDULING_STOP:
-				case SCHEDULING_SET_NICE:
-					result = _taskcall(SCHED_FCFS_PROC_NR, call_nr, &m_in);
-					break;
-
-				case SCHEDULING_NO_QUANTUM:
-				/* This message was sent from the kernel, don't reply */
-				if (IPC_STATUS_FLAGS_TEST(ipc_status,
-					IPC_FLG_MSG_FROM_KERNEL)) {
-					if ((rv = do_noquantum(&m_in)) != (OK)) {
-						printf("SCHED: Warning, do_noquantum "
-							"failed with %d\n", rv);
-					}
-					continue; /* Don't reply */
+		switch(call_nr) {
+		case SCHEDULING_INHERIT:
+		case SCHEDULING_START:
+			result = _taskcall(SCHED_RR_PROC_NR, call_nr, &m_in);
+			break;
+		case SCHEDULING_STOP:
+			result = _taskcall(SCHED_RR_PROC_NR, call_nr, &m_in);
+			break;
+		case SCHEDULING_SET_NICE:
+			result = _taskcall(SCHED_RR_PROC_NR, call_nr, &m_in);
+			break;
+		case SCHEDULING_NO_QUANTUM:
+			/* This message was sent from the kernel, don't reply */
+			if (IPC_STATUS_FLAGS_TEST(ipc_status,
+				IPC_FLG_MSG_FROM_KERNEL)) {
+				if ((rv = do_noquantum(&m_in)) != (OK)) {
+					printf("SCHED: Warning, do_noquantum "
+						"failed with %d\n", rv);
 				}
-				else {
-					printf("SCHED: process %d faked 1111 "
-						"SCHEDULING_NO_QUANTUM message!\n",
-							who_e);
-					result = EPERM;
-				}
-				break;
-				default:
-					result = no_sys(who_e, call_nr);
+				continue; /* Don't reply */
 			}
-		}	
-		else {
-			switch(call_nr) {
-			
-				case SCHEDULING_INHERIT:
-				case SCHEDULING_START:
-				case SCHEDULING_STOP:
-				case SCHEDULING_SET_NICE:
-					result = _taskcall(SCHED_RR_PROC_NR, call_nr, &m_in);
-					break;
-
-				case SCHEDULING_NO_QUANTUM:
-				/* This message was sent from the kernel, don't reply */
-				if (IPC_STATUS_FLAGS_TEST(ipc_status,
-					IPC_FLG_MSG_FROM_KERNEL)) {
-					if ((rv = do_noquantum(&m_in)) != (OK)) {
-						printf("SCHED: Warning, do_noquantum "
-							"failed with %d\n", rv);
-					}
-					continue; /* Don't reply */
-				}
-				else {
-					printf("SCHED: process %d faked 2222 "
-						"SCHEDULING_NO_QUANTUM message!\n",
-							who_e);
-					result = EPERM;
-				}
-				break;
-				default:
-					result = no_sys(who_e, call_nr);
+			else {
+				printf("SCHED: process %d faked "
+					"SCHEDULING_NO_QUANTUM message!\n",
+						who_e);
+				result = EPERM;
 			}
+			break;
+		default:
+			result = no_sys(who_e, call_nr);
 		}
+
 		/* Send reply. */
 		if (result != SUSPEND) {
 			m_in.m_type = result;  		/* build reply message */
