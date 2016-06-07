@@ -45,7 +45,7 @@ void sched_init(void)
 				printf("PM: SCHED denied taking over scheduling of %s: %d\n",
 					trmp->mp_name, s);
 			}
-			printf("Nombre del proceso que se calendariza: %s, se retorna %d\n", trmp->mp_name, s);
+			printf("\n\nNombre del proceso que se calendariza: %s\nscheduler_e: %d\nschedulee_e (trmp->mp_endpoint): %d\n se retorna: %d\n\n", trmp->mp_name, SCHED_PROC_NR, trmp->mp_endpoint, s);
 		}
  	}
 }

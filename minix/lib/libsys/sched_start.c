@@ -85,7 +85,7 @@ int sched_start(endpoint_t scheduler_e,
 
 	/* Send the request to the scheduler */
 	if ((rv = _taskcall(scheduler_e, SCHEDULING_START, &m))) {
-		printf("Se envio por taskcall un proceso al scheduler -> schedulee_e: %d\n", schedulee_e);
+		printf("\n\nSe envio por taskcall un proceso al scheduler.\nscheduler_e: %d\nschedulee_e: %d\n\n", scheduler_e, schedulee_e);
 		return rv;
 	}
 
