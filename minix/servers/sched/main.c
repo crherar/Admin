@@ -75,7 +75,7 @@ int main(void)
 					continue; /* Don't reply */
 				}
 				else {
-					printf("SCHED: process %d faked "
+					printf("SCHED: process %d faked 1111 "
 						"SCHEDULING_NO_QUANTUM message!\n",
 							who_e);
 					result = EPERM;
@@ -105,7 +105,7 @@ int main(void)
 					continue; /* Don't reply */
 				}
 				else {
-					printf("SCHED: process %d faked "
+					printf("SCHED: process %d faked 2222 "
 						"SCHEDULING_NO_QUANTUM message!\n",
 							who_e);
 					result = EPERM;
