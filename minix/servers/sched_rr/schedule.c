@@ -243,8 +243,8 @@ int do_start_scheduling(message *m_ptr)
 	 * scheduler into the "scheduler" field.
 	 */
 
-	m_ptr->m_sched_lsys_scheduling_start.scheduler = SCHED_PROC_NR;
-
+	m_ptr->m_sched_lsys_scheduling_start.scheduler = SCHED_RR_PROC_NR;
+	printf("SE LLEGO A LA PARTE DE SCHEDULE.C DE SCHED_RR DONDE SE ASIGNA SCHEDULER\n");
 	return OK;
 }
 

@@ -57,9 +57,9 @@ int main(void)
 		switch(call_nr) {
 		case SCHEDULING_INHERIT:
 		case SCHEDULING_START:
-			printf("\n\nSE LLEGO A SCHEDULING_START MAIN.C DE SCHED\n");
+			printf("SE LLEGO A SCHEDULING_START MAIN.C DE SCHED\n");
 			result = _taskcall(SCHED_RR_PROC_NR, call_nr, &m_in);
-			printf("\n\nSE PASO A SCHEDULING_START MAIN.C DE SCHED\n");
+			printf("SE PASO A SCHEDULING_START MAIN.C DE SCHED\n");
 			//result = do_start_scheduling(&m_in);
 			break;
 		case SCHEDULING_STOP:

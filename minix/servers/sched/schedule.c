@@ -244,7 +244,7 @@ int do_start_scheduling(message *m_ptr)
 	 */
 
 	m_ptr->m_sched_lsys_scheduling_start.scheduler = SCHED_RR_PROC_NR;
-	printf("\n\nSE LLEGO A LA PARTE DE SCHEDULE.C QUE DECIA SCHED_PROC_NR\n");
+	printf("SE LLEGO A LA PARTE DE SCHEDULE.C DE SCHED DONDE SE ASIGNA SCHEDULER\n");
 	return OK;
 }
 
