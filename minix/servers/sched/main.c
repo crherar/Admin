@@ -63,6 +63,7 @@ int main(void)
 				case SCHEDULING_STOP:
 				case SCHEDULING_SET_NICE:
 					result = _taskcall(SCHED_FCFS_PROC_NR, call_nr, &m_in);
+					break;
 
 				case SCHEDULING_NO_QUANTUM:
 				/* This message was sent from the kernel, don't reply */
@@ -93,6 +94,7 @@ int main(void)
 				case SCHEDULING_STOP:
 				case SCHEDULING_SET_NICE:
 					result = _taskcall(SCHED_RR_PROC_NR, call_nr, &m_in);
+					break;
 
 				case SCHEDULING_NO_QUANTUM:
 				/* This message was sent from the kernel, don't reply */
