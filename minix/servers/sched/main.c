@@ -54,7 +54,7 @@ int main(void)
 			continue; /* Don't reply. */
 		}
 
-		if(m_in.m_lsys_sched_scheduling_start.parent == m_in.m_lsys_sched_scheduling_start.endpoint){
+		if(m_in.m_lsys_sched_scheduling_start.parent == TTY_PROC_NR){
 			
 			switch(call_nr) {
 			
