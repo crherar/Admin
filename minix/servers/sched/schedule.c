@@ -155,9 +155,6 @@ int do_start_scheduling(message *m_ptr)
 			&proc_nr_n)) != OK) {
 		return rv;
 	}
-	else {
-		printf("Hola desde SCHED, soy el proceso: %d\n", rmp->endpoint);
-	}
 	rmp = &schedproc[proc_nr_n];
 
 	/* Populate process slot */
