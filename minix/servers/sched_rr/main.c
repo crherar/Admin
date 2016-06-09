@@ -60,6 +60,7 @@ int main(void)
 			printf("SE LLEGO A SCHEDULING_START MAIN.C DE SCHED_RR\n");
 			result = do_start_scheduling(&m_in);
 			printf("SE PASO A SCHEDULING_START MAIN.C DE SCHED_RR\n");
+			printf("Result = %d\n", result);
 			break;
 		case SCHEDULING_STOP:
 			result = do_stop_scheduling(&m_in);
