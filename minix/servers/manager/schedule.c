@@ -244,8 +244,7 @@ int do_start_scheduling(message *m_ptr)
 	 */
 
 	m_ptr->m_sched_lsys_scheduling_start.scheduler = SCHED_RR_PROC_NR;
-	*newscheduler_e = m.m_sched_lsys_scheduling_start.scheduler;
-	printf("sched_rr/schedule.c *newscheduler_e: %d\n", *newscheduler_e);
+	printf("manager/schedule.c m_ptr->m_sched_lsys_scheduling_start.scheduler: %d\n", m_ptr->m_sched_lsys_scheduling_start.scheduler);
 
 
 	return OK;
