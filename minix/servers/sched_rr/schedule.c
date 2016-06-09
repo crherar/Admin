@@ -139,6 +139,8 @@ int do_stop_scheduling(message *m_ptr)
  *===========================================================================*/
 int do_start_scheduling(message *m_ptr)
 {
+	printf("rmp->endpoint = %d\n", rmp->endpoint);
+	
 	register struct schedproc *rmp;
 	int rv, proc_nr_n, parent_nr_n;
 	
@@ -212,6 +214,7 @@ int do_start_scheduling(message *m_ptr)
 		/* not reachable */
 		assert(0);
 	}
+	printf("rmp->endpoint = %d\n", rmp->endpoint);
 
 	/* Take over scheduling the process. The kernel reply message populates
 	 * the processes current priority and its time slice */
