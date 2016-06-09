@@ -143,7 +143,9 @@ int do_start_scheduling(message *m_ptr)
 	register struct schedproc *rmp;
 	int rv, proc_nr_n, parent_nr_n;
 	
-	printf("rmp->endpoint = %d\n", rmp->endpoint);
+	printf("2rmp->endpoint = %d\n", rmp->endpoint);
+	printf("2rmp->parent = %d\n", rmp->parent);
+	printf("2rmp->max_priority = %d\n", rmp->max_priority);
 
 	/* we can handle two kinds of messages here */
 	assert(m_ptr->m_type == SCHEDULING_START || 
@@ -167,6 +169,10 @@ int do_start_scheduling(message *m_ptr)
 	if (rmp->max_priority >= NR_SCHED_QUEUES) {
 		return EINVAL;
 	}
+
+	printf("2rmp->endpoint = %d\n", rmp->endpoint);
+	printf("2rmp->parent = %d\n", rmp->parent);
+	printf("2rmp->max_priority = %d\n", rmp->max_priority);
 
 	/* Inherit current priority and time slice from parent. Since there
 	 * is currently only one scheduler scheduling the whole system, this
