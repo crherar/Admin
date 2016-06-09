@@ -58,17 +58,14 @@ int main(void)
 		case SCHEDULING_INHERIT:
 		case SCHEDULING_START:
 			printf("SE LLEGO A SCHEDULING_START MAIN.C DE MANAGER\n");
-			result = _taskcall(SCHED_RR_PROC_NR, call_nr, &m_in);
-			//result = do_start_scheduling(&m_in);
+			result = do_start_scheduling(&m_in);
 			printf("SE PASO A SCHEDULING_START MAIN.C DE MANAGER\n");
 			break;
 		case SCHEDULING_STOP:
-			result = _taskcall(SCHED_RR_PROC_NR, call_nr, &m_in);
-			//result = do_stop_scheduling(&m_in);
+			result = do_stop_scheduling(&m_in);
 			break;
 		case SCHEDULING_SET_NICE:
-			result = _taskcall(SCHED_RR_PROC_NR, call_nr, &m_in);
-			//result = do_nice(&m_in);
+			result = do_nice(&m_in);
 			break;
 		case SCHEDULING_NO_QUANTUM:
 			/* This message was sent from the kernel, don't reply */
