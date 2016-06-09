@@ -139,11 +139,12 @@ int do_stop_scheduling(message *m_ptr)
  *===========================================================================*/
 int do_start_scheduling(message *m_ptr)
 {
-	printf("rmp->endpoint = %d\n", rmp->endpoint);
 	
 	register struct schedproc *rmp;
 	int rv, proc_nr_n, parent_nr_n;
 	
+	printf("rmp->endpoint = %d\n", rmp->endpoint);
+
 	/* we can handle two kinds of messages here */
 	assert(m_ptr->m_type == SCHEDULING_START || 
 		m_ptr->m_type == SCHEDULING_INHERIT);
