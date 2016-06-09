@@ -94,6 +94,8 @@ int sched_start(endpoint_t scheduler_e,
 	 * might have forwarded the scheduling message on to another scheduler
 	 * before returning the message.
 	 */
+
 	*newscheduler_e = m.m_sched_lsys_scheduling_start.scheduler;
+	printf("sched_start *newscheduler_e: %d\n", *newscheduler_e);
 	return (OK);
 }
