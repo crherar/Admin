@@ -220,9 +220,6 @@ int do_start_scheduling(message *m_ptr)
 			rmp->endpoint, rv);
 		return rv;
 	}
-	else {
-		printf("Hola desde MANAGER, soy el proceso: %d\n", rmp->endpoint);
-	}
 	rmp->flags = IN_USE;
 
 	/* Schedule the process, giving it some quantum */
@@ -246,7 +243,7 @@ int do_start_scheduling(message *m_ptr)
 	 * scheduler into the "scheduler" field.
 	 */
 
-	m_ptr->m_sched_lsys_scheduling_start.scheduler = SCHED_PROC_NR;
+	m_ptr->m_sched_lsys_scheduling_start.scheduler = SCHED_RR_PROC_NR;
 
 	return OK;
 }
